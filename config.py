@@ -25,7 +25,6 @@ Urmează aceste reguli cu STRICTEȚE:
 """
 
 # 4. System Prompts Dictionary
-# Structure: SYSTEM_PROMPTS[language][disease][role]
 SYSTEM_PROMPTS = {
     "en": {
         "ms": {
@@ -79,4 +78,43 @@ Concentrează-te pe gestionarea schimbărilor comportamentale și reducerea stre
 """
         }
     }
+}
+
+# 5. Summary Prompts
+# We use consistent tags [SYMPTOMS] and [RECOMMENDATIONS] in both languages to make Python parsing easier.
+SUMMARY_PROMPTS = {
+    "en": """
+Analyze the conversation below.
+1. Identify any symptoms mentioned by the user.
+2. Provide general non-medical recommendations.
+
+Format your response EXACTLY like this using the headers:
+
+[SYMPTOMS]
+- Symptom 1
+- Symptom 2
+
+[RECOMMENDATIONS]
+- Recommendation 1
+- Recommendation 2
+
+Do not add introductions or conclusions. Only the lists.
+""",
+    "ro": """
+Analizează conversația de mai jos.
+1. Identifică simptomele menționate de utilizator.
+2. Oferă recomandări generale non-medicale.
+
+Formatează răspunsul EXACT așa, folosind aceste titluri:
+
+[SYMPTOMS]
+- Simptom 1
+- Simptom 2
+
+[RECOMMENDATIONS]
+- Recomandare 1
+- Recomandare 2
+
+Nu adăuga introduceri sau concluzii. Doar listele.
+"""
 }
