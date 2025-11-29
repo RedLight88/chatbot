@@ -1,5 +1,5 @@
 # 1. Ollama Settings
-MODEL_NAME = "phi3:mini"
+MODEL_NAME = "qwen2.5:7b-instruct"
 
 # 2. Server Settings
 API_HOST = "0.0.0.0"
